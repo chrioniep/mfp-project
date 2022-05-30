@@ -6,9 +6,9 @@ name: container-deploy
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
-    branches: [ main ]
+    branches: [main]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -19,7 +19,7 @@ jobs:
     defaults:
       run:
         working-directory: packages/container
-    
+
     steps:
       - uses: actions/checkout@v3
       - name: install all depedencies
@@ -33,4 +33,4 @@ jobs:
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          AWS_DEFAULT_REGION: ""
+          AWS_DEFAULT_REGION: us-east-2
