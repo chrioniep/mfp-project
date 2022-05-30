@@ -4,18 +4,19 @@ name: deploy-container
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
   push:
-    branches: [main]
+    branches:
+      - main
     paths:
-      - "packages/container/**"
+      - 'packages/container/**'
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+defaults:
+  run:
+    working-directory: packages/container
+
 jobs:
-  # This workflow contains a single job called "build"
   build:
-    # The type of runner that the job will run on
     runs-on: ubuntu-latest
-
-    # Steps represent a sequence of tasks that will be executed as part of the job
+    
     steps:
       - uses: actions/checkout@v3
       - name: install all depedencies
