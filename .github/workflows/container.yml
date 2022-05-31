@@ -28,7 +28,7 @@ jobs:
       - name: build production file
         run: npm run build
         env:
-          - PRODUCTION_DOMAIN: ${{ secrets.PRODUCTION_DOMAIN }}
+          PRODUCTION_DOMAIN: ${{ secrets.PRODUCTION_DOMAIN }}
 
       - uses: shinyinc/action-aws-cli@v1.2
       - name: connect with aws bucket
