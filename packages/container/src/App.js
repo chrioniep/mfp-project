@@ -25,6 +25,7 @@ export default () => {
           <Suspense fallback={<Progress />}>
             <Switch>
               {/* <Route path="/auth" component={AuthLazy} /> */}
+              {/* just for test */}
               <Route path="/auth">
                 <AuthLazy onSignIn={() => setInSignIn(true)} />
               </Route>
